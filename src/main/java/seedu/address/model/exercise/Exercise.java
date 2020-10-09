@@ -10,17 +10,23 @@ public class Exercise {
     private final Date date;
 
     // data field
+    private final Description description;
     private final Calories calories;
 
-    public Exercise(Name name, Date date, Calories calories) {
-        requireAllNonNull(name, date);
+    public Exercise(Name name, Description description, Date date, Calories calories) {
+        requireAllNonNull(name, description, date);
         this.name = name;
+        this.description = description;
         this.date = date;
         this.calories = calories;
     }
 
     public Name getName() {
         return name;
+    }
+
+    public Description getDescription() {
+        return description;
     }
 
     public Date getDate() {
@@ -33,7 +39,7 @@ public class Exercise {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, date, calories);
+        return Objects.hash(name, description, date, calories);
     }
 
     @Override
@@ -41,11 +47,12 @@ public class Exercise {
         final StringBuilder builder = new StringBuilder();
         builder.append("Name: ")
                 .append(getName())
+                .append(" Description: ")
+                .append(getDescription())
                 .append(" Date: ")
                 .append(getDate())
-                .append(" Date: ")
-                .append(getCalories())
-                .append(" Calories: ");
+                .append(" Calories: ")
+                .append(getCalories());
         return builder.toString();
     }
 }
