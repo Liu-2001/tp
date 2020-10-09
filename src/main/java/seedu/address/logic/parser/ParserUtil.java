@@ -15,7 +15,6 @@ import seedu.address.model.exercise.Date;
 import seedu.address.model.exercise.Description;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
-import seedu.address.model.exercise.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
 
@@ -45,13 +44,22 @@ public class ParserUtil {
      *
      * @throws ParseException if the given {@code name} is invalid.
      */
-    public static Name parseName(String name) throws ParseException {
+    public static seedu.address.model.exercise.Name parseExerciseName(String name) throws ParseException {
         requireNonNull(name);
         String trimmedName = name.trim();
-        if (!Name.isValidName(trimmedName)) {
-            throw new ParseException(Name.MESSAGE_CONSTRAINTS);
+        if (!seedu.address.model.exercise.Name.isValidName(trimmedName)) {
+            throw new ParseException(seedu.address.model.exercise.Name.MESSAGE_CONSTRAINTS);
         }
-        return new Name(trimmedName);
+        return new seedu.address.model.exercise.Name(trimmedName);
+    }
+
+    public static seedu.address.model.person.Name parseName(String name) throws ParseException {
+        requireNonNull(name);
+        String trimmedName = name.trim();
+        if (!seedu.address.model.person.Name.isValidName(trimmedName)) {
+            throw new ParseException(seedu.address.model.person.Name.MESSAGE_CONSTRAINTS);
+        }
+        return new seedu.address.model.person.Name(trimmedName);
     }
 
     public static Description parseDescription(String description) throws ParseException {

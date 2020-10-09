@@ -4,14 +4,13 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.*;
 
 import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.model.Model;
+import seedu.address.model.ExerciseModel;
 import seedu.address.model.exercise.Exercise;
-import seedu.address.model.person.Person;
 
 /**
  * Adds an exercise to Calo.
  */
-public class AddCommand extends Command {
+public class AddCommand extends CommandForExercise {
 
     public static final String COMMAND_WORD = "add";
 
@@ -40,11 +39,10 @@ public class AddCommand extends Command {
     }
 
     @Override
-    public CommandResult execute(Model model) throws CommandException {
+    public CommandResult execute(ExerciseModel model) throws CommandException {
         requireNonNull(model);
 
-        //todo
-        //model.addPerson(toAdd);
+        model.addExercise(toAdd);
         return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
     }
 

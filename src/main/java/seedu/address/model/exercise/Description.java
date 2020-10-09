@@ -16,7 +16,6 @@ public class Description {
      */
     public Description(String description) {
         requireNonNull(description);
-        checkArgument(isValidDescription(description), MESSAGE_CONSTRAINTS);
         this.description = description;
     }
 

@@ -12,7 +12,7 @@ import seedu.address.model.exercise.*;
 /**
  * Parses input arguments and creates a new AddCommand object
  */
-public class AddCommandParser implements Parser<AddCommand> {
+public class AddCommandParser {
 
     /**
      * Parses the given {@code String} of arguments in the context of the AddCommand
@@ -28,7 +28,7 @@ public class AddCommandParser implements Parser<AddCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
         }
 
-        Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
+        Name name = ParserUtil.parseExerciseName(argMultimap.getValue(PREFIX_NAME).get());
         Description description = ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());
         Date date = ParserUtil.parseDate(argMultimap.getValue(PREFIX_DATE).get());
         Calories calories = ParserUtil.parseCalories(argMultimap.getValue(PREFIX_CALORIES).get());
