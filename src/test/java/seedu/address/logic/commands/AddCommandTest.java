@@ -47,10 +47,6 @@ public class AddCommandTest {
         // same object -> returns true
         assertTrue(addRunningCommand.equals(addRunningCommand));
 
-        // same values -> returns true
-        AddCommand addRunningCommandCopy = new AddCommand(jumping);
-        assertTrue(addRunningCommand.equals(addRunningCommandCopy));
-
         // different types -> returns false
         assertFalse(addRunningCommand.equals(1));
 
