@@ -18,10 +18,12 @@ public class AddCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds an exercise to Calo. "
             + "Parameters: "
             + PREFIX_NAME + "NAME "
+            + PREFIX_DESCRIPTION + "DESCRIPTION"
             + PREFIX_DATE + "DATE "
             + "[" + PREFIX_CALORIES + "CALORIES]\n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "running "
+            + PREFIX_DESCRIPTION + "10 mins"
             + PREFIX_DATE + "31-12-2020 "
             + PREFIX_CALORIES + "100 kcal ";
 
