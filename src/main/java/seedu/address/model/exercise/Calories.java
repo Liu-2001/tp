@@ -23,14 +23,14 @@ public class Calories {
      */
     public Calories(String calories) {
         requireNonNull(calories);
-        checkArgument(isValidCalory(calories), MESSAGE_CONSTRAINTS);
+        checkArgument(isValidCalories(calories), MESSAGE_CONSTRAINTS);
         value = calories;
     }
 
     /**
      * Returns true if a given string is a valid input.
      */
-    public static boolean isValidCalory(String test) {
+    public static boolean isValidCalories(String test) {
         return test.matches(VALIDATION_REGEX);
     }
 

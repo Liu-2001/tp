@@ -22,7 +22,7 @@ public class AddCommand extends CommandForExercise {
             + "[" + PREFIX_CALORIES + "CALORIES]\n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "running "
-            + PREFIX_DESCRIPTION + "10 mins"
+            + PREFIX_DESCRIPTION + "10 mins "
             + PREFIX_DATE + "31-12-2020 "
             + PREFIX_CALORIES + "100 kcal ";
 
@@ -44,6 +44,13 @@ public class AddCommand extends CommandForExercise {
 
         model.addExercise(toAdd);
         return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof AddCommand // instanceof handles nulls
+                && toAdd.equals(((AddCommand) other).toAdd)); // state check
     }
 
 }

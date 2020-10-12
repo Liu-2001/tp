@@ -1,5 +1,7 @@
 package seedu.address.model.exercise;
 
+import seedu.address.model.person.Person;
+
 import java.util.Objects;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
@@ -54,5 +56,23 @@ public class Exercise {
                 .append(" Calories: ")
                 .append(getCalories());
         return builder.toString();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        if (!(other instanceof Exercise)) {
+            return false;
+        }
+
+        Exercise otherExercise = (Exercise) other;
+
+        return otherExercise.getName().equals(getName())
+                && otherExercise.getDescription().equals(getDescription())
+                && otherExercise.getDate().equals(getDate())
+                && otherExercise.getCalories().equals(getCalories());
     }
 }

@@ -1,7 +1,6 @@
 package seedu.address.model.exercise;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
 
 public class Description {
     public static final String MESSAGE_CONSTRAINTS =
@@ -23,9 +22,8 @@ public class Description {
      * Returns true if a given string is a valid name.
      */
     public static boolean isValidDescription(String test) {
-        return test.equals("");
+        return !test.equals("");
     }
-
 
     @Override
     public String toString() {

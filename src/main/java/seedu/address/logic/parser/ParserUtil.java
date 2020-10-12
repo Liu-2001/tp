@@ -83,7 +83,7 @@ public class ParserUtil {
     public static Calories parseCalories(String calories) throws ParseException {
         requireNonNull(calories);
         String trimmedCalories = calories.trim();
-        if(!Calories.isValidCalory(trimmedCalories)) {
+        if(!Calories.isValidCalories(trimmedCalories)) {
             throw new ParseException(Calories.MESSAGE_CONSTRAINTS);
         }
         return new Calories(trimmedCalories);
