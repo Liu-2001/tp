@@ -31,7 +31,8 @@ public class AddTemplateCommandParser implements ExerciseParser<AddTemplateComma
      */
     public AddTemplateCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_DESCRIPTION, PREFIX_CALORIES);
+                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_DESCRIPTION,
+                        PREFIX_CALORIES, PREFIX_MUSCLES, PREFIX_TAG);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_DESCRIPTION, PREFIX_CALORIES,
                                 PREFIX_MUSCLES, PREFIX_TAG)
@@ -60,7 +61,7 @@ public class AddTemplateCommandParser implements ExerciseParser<AddTemplateComma
      */
     public Template parseTemp(String args) throws ParseException {
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_DESCRIPTION, PREFIX_CALORIES);
+                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_DESCRIPTION, PREFIX_CALORIES, PREFIX_MUSCLES, PREFIX_TAG);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_DESCRIPTION, PREFIX_CALORIES,
                 PREFIX_MUSCLES, PREFIX_TAG)
