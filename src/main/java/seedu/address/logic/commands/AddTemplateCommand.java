@@ -29,7 +29,7 @@ public class AddTemplateCommand extends CommandForExercise {
             + PREFIX_DESCRIPTION + "10 mins "
             + PREFIX_CALORIES + "100 "
             + PREFIX_MUSCLES + "arm "
-            +PREFIX_TAG + "gym";
+            + PREFIX_TAG + "gym";
 
     public static final String MESSAGE_SUCCESS = "New template created: %1$s";
 
