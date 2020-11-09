@@ -120,7 +120,7 @@ Given below is the Sequence Diagram for interactions within the `Logic` componen
 
 ![Structure of the Model Component](diagrams/ModelClassDiagram.puml)
 
-**API** : [`Model.java`](https://github.com/AY2021S1-CS2103T-W17-2/tp/blob/master/src/main/java/seedu/address/model/ExerciseModel.java)
+**API** : [`Model.java`](https://github.com/AY2021S1-CS2103T-W17-2/tp/blob/master/src/main/java/seedu/address/model/Model.java)
 
 The `Model`,
 
@@ -383,9 +383,11 @@ This section addresses how the `find` and `recall` commands work.
 
 The `find` command allows users to search through the Exercise Book based on what users enter for the `Field`s. Users should enter at least one `Field`. The search results can then be displayed in the GUI's Exercise Book.
 
+<div markdown="span" class="alert alert-info">:information_source: **Note:**
 `Field`s here indicate which `Exercise` attributes we are interested in. Exact search finds `Exercise` objects with values that exactly match the user-specified values of the fields (`Name`, `Description`, `Date` ,`Calories`).
 Meanwhile, keyword search finds matches for the user-entered keywords in any part of the `Name` or any part of the `Description`.
 If the user uses exact search and keyword search together, it will find `Exercise` objects that match both the exact search and keyword search.
+</div>
 
 Meanwhile, the `recall` command allows users to search for the most recent exercise with the specific name entered by the user.
 
